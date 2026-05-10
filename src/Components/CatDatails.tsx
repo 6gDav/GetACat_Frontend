@@ -3,6 +3,7 @@ import React from 'react'
 function CatDatails() {
     return (
         <div>
+            <h1>Cat Datatils</h1>
             <p>
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus labore illum iste voluptatum, expedita quam facere cum blanditiis dolorum harum quasi? Repellendus, soluta quidem exercitationem velit repudiandae est amet sapiente!
                 Modi tempore ex eveniet nihil dolores alias beatae autem quas pariatur, soluta atque sunt officia deleniti harum exercitationem nesciunt id obcaecati. Ipsa, iure doloribus. Quia error distinctio ipsam ullam quidem.

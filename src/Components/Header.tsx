@@ -24,7 +24,7 @@ function Header() {
                     <ul className="nav-links">
                         <li><a href="#images">Images</a></li>
                         <li><a href="#apidescription">API Description</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#catdatails">Cat Datails</a></li>
                     </ul>
                 </nav>
             </header>
