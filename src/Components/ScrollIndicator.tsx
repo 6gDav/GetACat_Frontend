@@ -1,40 +1,59 @@
-import React from 'react';
-import { motion, useScroll, useSpring } from 'framer-motion';
+import { motion, useScroll, useSpring, useTransform } from 'framer-motion';
+import '../styles/Responsive.css'
 
 const VerticalScrollIndicator = () => {
-  const { scrollYProgress } = useScroll();
+  const { scrollYProgress, scrollY } = useScroll();
 
   const scaleY = useSpring(scrollYProgress, {
-    stiffness: 100, // Merevség
-    damping: 30,    // Csillapítás
-    restDelta: 0.001 // Mikor álljon meg
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
   });
 
-  return (
-    <motion.div
-      style={{
-        // Pozicionálás
-        position: 'fixed',
-        top: 0,
-        right: 0, // Teljesen a jobb szélre
-        bottom: 0, // Végigérjen fentről lefelé
+  const threadPath = `
+    M 20 0 
+    L 5 80
+    L 35 160
+    L 10 240
+    L 30 320´
+    L 5 400
+    L 35 480
+    L 15 560
+    L 30 640
+    L 10 720
+    L 35 800
+    L 20 1000
+  `;
 
-        // Kinézet
-        width: '6px', // A csík szélessége
-        backgroundColor: '#e80bf4', // Szép zöld szín
-        
-        // Transzformáció beállítása
-        scaleY: scaleY, // Vagy scaleY: scrollYProgress (ha nem kell a rugó)
-        originY: 0, // A transzformáció a tetejétől induljon (ne középről)
-        
-        // Biztosan legfelül legyen minden felett
-        zIndex: 1000,
-        
-        // Egy enyhe árnyék, hogy jobban elváljon
-        boxShadow: '-1px 0px 5px rgba(0,0,0,0.2)'
-      }}
-    />
-  );
+  const progressPoints = [
+    0, 0.0788, 0.1615, 0.2426, 0.3225, 0.4036, 0.4863, 0.5661, 0.6449, 0.7247, 0.8059, 1
+  ];
+
+  const xValues = [
+    "50%", "12.5%", "87.5%", "25%", "75%", "12.5%", "87.5%", "37.5%", "75%", "25%", "87.5%", "50%"
+  ];
+
+  const yValues = [
+    "0%", "8%", "16%", "24%", "32%", "40%", "48%", "56%", "64%", "72%", "80%", "100%"
+  ];
+
+  const top = useTransform(scaleY, progressPoints, yValues);
+  const left = useTransform(scaleY, progressPoints, xValues);
+
+  const skeinScale = useTransform(scaleY, [0, 1], [1, 0.2]);
+  const skeinRotate = useTransform(scrollY, (y) => y / 15);
+
+  return (
+    <div id="scroll-container">
+      <svg width="100%" height="100%" viewBox="0 0 40 1000" preserveAspectRatio="none" style={{ overflow: 'visible' }} >
+        <motion.path d={threadPath} fill="transparent" stroke="#e80bf4" strokeWidth="3"
+          strokeLinecap="round" strokeLinejoin="round" style={{ pathLength: scaleY }} />
+      </svg>
+      <motion.div style={{ position: 'absolute', top, left, x: "-45%", y: "-55%", }}>
+        <motion.div id='skein' style={{ scale: skeinScale, rotate: skeinRotate }} />
+      </motion.div>
+    </div >
+  )
 };
 
 export default VerticalScrollIndicator;
