@@ -1,5 +1,5 @@
-import { motion, useScroll, useSpring, useTransform } from 'framer-motion';
-import '../styles/Responsive.css'
+import { motion, rgba, useScroll, useSpring, useTransform } from 'framer-motion';
+import '../styles/ProgressBar.css'
 
 const VerticalScrollIndicator = () => {
   const { scrollYProgress, scrollY } = useScroll();
@@ -15,7 +15,7 @@ const VerticalScrollIndicator = () => {
     L 5 80
     L 35 160
     L 10 240
-    L 30 320´
+    L 30 320
     L 5 400
     L 35 480
     L 15 560
@@ -46,7 +46,7 @@ const VerticalScrollIndicator = () => {
   return (
     <div id="scroll-container">
       <svg width="100%" height="100%" viewBox="0 0 40 1000" preserveAspectRatio="none" style={{ overflow: 'visible' }} >
-        <motion.path d={threadPath} fill="transparent" stroke="#e80bf4" strokeWidth="3"
+        <motion.path d={threadPath} fill="transparent" stroke="rgba(248, 0, 153, 0.85)" strokeWidth="3"
           strokeLinecap="round" strokeLinejoin="round" style={{ pathLength: scaleY }} />
       </svg>
       <motion.div style={{ position: 'absolute', top, left, x: "-45%", y: "-55%", }}>

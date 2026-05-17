@@ -27,9 +27,9 @@ function Header() {
                         <span className="logo-text">GetACat</span>
                     </div>
                     <ul className="nav-links">
-                        <li><a href="#home">Images</a></li>
-                        <li><a href="#contact">Cat Datails</a></li>
-                        <li><a href="#feature">API</a></li>
+                        <li><a href="#images">Images</a></li>
+                        <li><a href="#apidescription">Cat Datails</a></li>
+                        <li><a href="#catdatails">API</a></li>
                     </ul>
                 </nav>
                 <div id='cat-image-header-container'>
