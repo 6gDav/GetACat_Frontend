@@ -11,20 +11,28 @@ import './styles/App.css'
 
 function App() {
   const [res, setRes] = useState([])
+  const [isDesktop, setIsDesktop] = useState(window.innerWidth > 768)
 
   useEffect(() => {
     axios.get("http://localhost:3001/get-a-cat-image")
       .then(r => setRes(r.data))
       .catch(err => console.error(err))
+
+    const handleResize = () => {
+      setIsDesktop(window.innerWidth > 768)
+    }
+
+    window.addEventListener('resize', handleResize)
+
+    return () => window.removeEventListener('resize', handleResize)
   }, [])
 
   return (
     <>
-      <VerticalScrollIndicator />
+      {isDesktop && <VerticalScrollIndicator />}
+      
       <Header />
       <main className="main-content">
-
-
         <section id='images'>
           <CaroselUI res={res} />
         </section>

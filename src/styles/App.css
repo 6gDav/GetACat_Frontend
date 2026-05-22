@@ -192,3 +192,8 @@
 html {
   scroll-behavior: smooth;
 }
+
+p {
+  margin-left: 10%;
+  margin-right: 10%;
+}
