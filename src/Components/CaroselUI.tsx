@@ -1,20 +1,41 @@
-function CaroselUI({res}) {
+import { useState } from "react";
+
+function CaroselUI({ res }) {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  if (!res || res.length === 0) return null;
+
+  const handlePrev = (e) => {
+    e.preventDefault();
+    setCurrentIndex((prev) => (prev === 0 ? res.length - 1 : prev - 1));
+  };
+
+  const handleNext = (e) => {
+    e.preventDefault();
+    setCurrentIndex((prev) => (prev === res.length - 1 ? 0 : prev + 1));
+  };
+
   return (
     <div>
-        <div className="carousel w-full">
-        {res.map((item, index) => (
-          <div key={index} id={`slide${index}`} className="carousel-item relative w-full flex justify-center">
-            <img src={item} className="max-h-125 object-contain" style={{ width: "700px" }} alt={`Slide ${index}`} />
+      <div className="carousel w-full">
+        {res.map((item, index) => {
+          const isCurrent = index === currentIndex;
 
-            <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-              <a href={`#slide${index === 0 ? res.length - 1 : index - 1}`} className="btn btn-circle">❮</a>
-              <a href={`#slide${index === res.length - 1 ? 0 : index + 1}`} className="btn btn-circle">❯</a>
+          return (
+            <div
+              key={index}
+              className={`carousel-item relative w-full flex justify-center ${isCurrent ? "block" : "hidden"}`}>
+              <img src={item} className="max-h-125 object-contain" style={{ width: "700px" }} alt={`Slide ${index}`} />
+
+              <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+                <button onClick={handlePrev} className="btn btn-circle">❮</button>
+                <button onClick={handleNext} className="btn btn-circle">❯</button>
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </div>
-  )
+  );
 }
 
-export default CaroselUI
+export default CaroselUI;
