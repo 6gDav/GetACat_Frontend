@@ -1,8 +1,14 @@
-import { motion, rgba, useScroll, useSpring, useTransform } from 'framer-motion';
+import { motion, useScroll, useSpring, useTransform } from 'framer-motion';
 import '../styles/ProgressBar.css'
 
 const VerticalScrollIndicator = () => {
   const { scrollYProgress, scrollY } = useScroll();
+
+  const skeinOnClickEvent = () => {
+    window.scrollTo({
+      top: 0,
+    });
+  };
 
   const scaleY = useSpring(scrollYProgress, {
     stiffness: 100,
@@ -50,7 +56,7 @@ const VerticalScrollIndicator = () => {
           strokeLinecap="round" strokeLinejoin="round" style={{ pathLength: scaleY }} />
       </svg>
       <motion.div style={{ position: 'absolute', top, left, x: "-45%", y: "-55%", }}>
-        <motion.div id='skein' style={{ scale: skeinScale, rotate: skeinRotate }} />
+        <motion.div id='skein' style={{ scale: skeinScale, rotate: skeinRotate }}  onClick={skeinOnClickEvent}/>
       </motion.div>
     </div >
   )
