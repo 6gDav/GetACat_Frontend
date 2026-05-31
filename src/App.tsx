@@ -30,18 +30,19 @@ function App() {
   return (
     <>
       {isDesktop && <VerticalScrollIndicator />}
-      
+
       <Header />
       <main className="main-content">
         <section id='images'>
           <CaroselUI res={res} />
         </section>
-        <section id='apidescription'>
-          <APIDescription />
-        </section>
         <section id='catdatails'>
           <CatDatails />
         </section>
+        <section id='apidescription'>
+          <APIDescription />
+        </section>
+
       </main>
     </>
   )
