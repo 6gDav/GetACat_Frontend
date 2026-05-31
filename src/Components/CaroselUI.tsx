@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import '../styles/CaroselUI.css'
+
 function CaroselUI({ res }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   if (!res || res.length === 0) return null;
