@@ -9,23 +9,33 @@ import VerticalScrollIndicator from './Components/ScrollIndicator'
 
 import './styles/App.css'
 
+const CACHE_KEY = "cached_cat_images";
+
 function App() {
-  const [res, setRes] = useState([])
-  const [isDesktop, setIsDesktop] = useState(window.innerWidth > 768)
+  const [res, setRes] = useState(() => {
+    const saved = sessionStorage.getItem(CACHE_KEY);
+    return saved ? JSON.parse(saved) : [];
+  });
+
+  const [isDesktop, setIsDesktop] = useState(window.innerWidth > 768);
 
   useEffect(() => {
+    if (res.length > 0) return;
+
     axios.get("http://localhost:3001/get-a-cat-image")
-      .then(r => setRes(r.data))
-      .catch(err => console.error(err))
+      .then(r => {
+        setRes(r.data);
+        sessionStorage.setItem(CACHE_KEY, JSON.stringify(r.data));
+      })
+      .catch(err => console.error(err));
+  }, [res]);
 
-    const handleResize = () => {
-      setIsDesktop(window.innerWidth > 768)
-    }
+  useEffect(() => {
+    const handleResize = () => setIsDesktop(window.innerWidth > 768);
 
-    window.addEventListener('resize', handleResize)
-
-    return () => window.removeEventListener('resize', handleResize)
-  }, [])
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   return (
     <>
