@@ -13,14 +13,22 @@ interface CatDatailsyName {
     image: string
 }
 
+const CACHE_KEY = "cached_cat_names";
+
 function CatDatails() {
-    const [catNames, setCatNames] = useState([])
+    const [catNames, setCatNames] = useState(() => {
+        const saved = sessionStorage.getItem(CACHE_KEY);
+        return saved ? JSON.parse(saved) : [];
+    });
     const [choiced, setChoiced] = useState("");
     const [choicedCatDatails, setChoicedCatDatails] = useState<CatDatailsyName>()
 
     useEffect(() => {
         axios.get("http://localhost:3001/get-a-cat-info-datail/get-all-names/")
-            .then(r => setCatNames(r.data))
+            .then(r => { 
+                setCatNames(r.data);
+                sessionStorage.setItem(CACHE_KEY, JSON.stringify(r.data));
+            })
             .catch(err => console.error(err))
     }, [])
 
