@@ -205,3 +205,14 @@ p {
 #apidescription {
   margin-top: 5%;
 }
+
+/* Break the footer out of the constrained #root width so it spans the full viewport */
+footer.footer {
+  width: 99vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  box-sizing: border-box;
+}

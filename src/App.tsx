@@ -6,6 +6,7 @@ import CaroselUI from './Components/CaroselUI'
 import APIDescription from './Components/APIDescription'
 import CatDatails from './Components/CatDatails'
 import VerticalScrollIndicator from './Components/ScrollIndicator'
+import Footer from './Components/Footer'
 
 import './styles/App.css'
 
@@ -52,8 +53,8 @@ function App() {
         <section id='apidescription'>
           <APIDescription />
         </section>
-
       </main>
+      <Footer />
     </>
   )
 }
