@@ -24,7 +24,7 @@ function Header() {
                 <nav className="nav-container">
                     <div className="header-logo">
                         <span className="logo-icon"></span>
-                        <span className="logo-text">GetACat</span>
+                        <span className="logo-text" onClick={() => window.location.reload()}>GetACat</span>
                     </div>
                     <ul className="nav-links">
                         <li><a href="#images">Images</a></li>
