@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react"
 import axios from "axios"
+import CatSelect from "./CatSelect"
 
 import "../styles/CatDatails.css"
 
-interface CatDatailsyName {
+interface CatDatailsName {
     id: string,
     name: string,
     lifespan: string,
@@ -13,24 +14,10 @@ interface CatDatailsyName {
     image: string
 }
 
-const CACHE_KEY = "cached_cat_names";
-
 function CatDatails() {
-    const [catNames, setCatNames] = useState(() => {
-        const saved = sessionStorage.getItem(CACHE_KEY);
-        return saved ? JSON.parse(saved) : [];
-    });
     const [choiced, setChoiced] = useState("");
-    const [choicedCatDatails, setChoicedCatDatails] = useState<CatDatailsyName>()
+    const [choicedCatDatails, setChoicedCatDatails] = useState<CatDatailsName>()
 
-    useEffect(() => {
-        axios.get("http://localhost:3001/get-a-cat-info-datail/get-all-names/")
-            .then(r => { 
-                setCatNames(r.data);
-                sessionStorage.setItem(CACHE_KEY, JSON.stringify(r.data));
-            })
-            .catch(err => console.error(err))
-    }, [])
 
     useEffect(() => {
         axios.get(`http://localhost:3001/get-a-cat-info/${choiced}`)
@@ -38,22 +25,12 @@ function CatDatails() {
             .catch(err => console.error(err))
     }, [choiced]);
 
-    console.log("From CatDatails", choicedCatDatails)
+    //console.log("From CatDatails", choicedCatDatails)
 
     return (
         <div>
             <h1>Cat Datails</h1>
-            <select defaultValue="Pick a cat" className="select select-secondary"
-                onChange={(e) => setChoiced(e.target.value)}>
-                <option disabled value="Pick a cat">Pick a Cat</option>
-                {
-                    catNames.map((cat, index) => (
-                        <option key={index} value={cat}>
-                            {cat}
-                        </option>
-                    ))
-                }
-            </select>
+            <CatSelect onCatChange={setChoiced} />
 
             <div className="mt-12 px-4 sm:px-8 md:px-16 lg:px-24 xl:px-32 W-full max-w-6xl mx-auto">
                 {!choicedCatDatails ? (
