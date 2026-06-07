@@ -47,9 +47,11 @@ function App() {
         <section id='images'>
           <CaroselUI res={res} />
         </section>
+        <hr />
         <section id='catdatails'>
           <CatDatails />
         </section>
+        <hr />
         <section id='apidescription'>
           <APIDescription />
         </section>

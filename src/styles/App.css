@@ -206,8 +206,8 @@ p {
   margin-top: 5%;
 }
 
-/* Break the footer out of the constrained #root width so it spans the full viewport */
 footer.footer {
+  margin-top: 5%;
   width: 99vw;
   position: relative;
   left: 50%;
@@ -215,4 +215,13 @@ footer.footer {
   margin-left: -50vw;
   margin-right: -50vw;
   box-sizing: border-box;
+}
+
+hr {
+  width: 60%;
+  margin: 3rem auto; 
+  border: none;     
+  height: 2px;       
+  background-color: #333; 
+  border-radius: 2px;    
 }

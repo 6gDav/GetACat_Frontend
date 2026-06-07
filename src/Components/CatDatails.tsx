@@ -42,6 +42,7 @@ function CatDatails() {
 
     return (
         <div>
+            <h1>Cat Datails</h1>
             <select defaultValue="Pick a cat" className="select select-secondary"
                 onChange={(e) => setChoiced(e.target.value)}>
                 <option disabled value="Pick a cat">Pick a Cat</option>
@@ -61,7 +62,6 @@ function CatDatails() {
                     </div>
                 ) : (
                     <div className="card md:card-side bg-base-100 shadow-xl border border-base-200 overflow-hidden transition-all duration-300 hover:shadow-2xl">
-                        {/* Kép szekció - fixált, szép vágással */}
                         <figure className="md:w-2/5 h-64 md:h-auto relative min-h-[300px]">
                             <img
                                 src={choicedCatDatails.image}
@@ -69,15 +69,12 @@ function CatDatails() {
                                 className="absolute inset-0 w-full h-full object-cover"
                             />
                         </figure>
-
-                        {/* Tartalom szekció */}
                         <div className="card-body md:w-3/5 p-8 justify-between">
                             <div>
                                 <h2 className="card-title text-3xl font-extrabold tracking-tight text-primary mb-6 border-b pb-2 border-base-200">
                                     {choicedCatDatails.name}
                                 </h2>
 
-                                {/* Lista rács elrendezésben az unalmas sima lista helyett */}
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                     <div className="flex flex-col p-3 bg-base-200/50 rounded-xl">
                                         <span className="text-xs uppercase tracking-wider font-semibold text-base-content/60 mb-1">Lifespan</span>
