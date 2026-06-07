@@ -225,3 +225,29 @@ hr {
   background-color: #333; 
   border-radius: 2px;    
 }
+
+h3, h4 {
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+
+.url {
+  color: #4f46e5; 
+  font-size: 0.7rem;
+  font-weight: 500;
+  background-color: #f3f4f6; 
+  padding: 6px;
+  border-radius: 6px;
+  border-left: 4px solid #4f46e5; 
+  display: inline-block; 
+  font-family: monospace;
+}
