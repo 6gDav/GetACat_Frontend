@@ -1,10 +1,12 @@
 import "../styles/Description.css"
-import CatDatails from "../Components/CatSelect"
 import { useState } from "react";
+import CatSelect from "../Components/CatSelect";
 
 function APIDescription() {
-  const [choiced, setChoiced] = useState("");
-  const getInfoURL = `https://getacat-backend.onrender.com/get-a-cat-info/${choiced}`;
+  const [choicedName, setChoicedName] = useState("");
+  const [choicedInfo, setChoicedInfo] = useState("");
+  const getInfoURL = `https://getacat-backend.onrender.com/get-a-cat-info/${choicedName}`;
+  const getInfoURLWithProp = `https://getacat-backend.onrender.com/get-a-cat-info/${choicedName}/${choicedInfo}`
 
   return (
     <div>
@@ -18,18 +20,28 @@ function APIDescription() {
         <div className="tab-content bg-base-100 border-base-300 p-6">
           <h3>Images</h3>
           <p className="url" onClick={() => navigator.clipboard.writeText("https://getacat-backend.onrender.com/get-a-cat-image")}
-            style={{ cursor: 'pointer', marginTop: "2%" }} title="Click to copy.">https://getacat-backend.onrender.com/get-a-cat-image</p> 
+            style={{ cursor: 'pointer', marginTop: "2%" }} title="Click to copy.">https://getacat-backend.onrender.com/get-a-cat-image</p>
         </div>
 
         <input type="radio" name="my_tabs_6" className="tab" aria-label="Cat Datatils" />
         <div className="tab-content bg-base-100 border-base-300 p-6">
           <h3>Cat Datatils</h3>
-          <CatDatails onCatChange={setChoiced} />
+
+          <CatSelect onCatChange={setChoicedName}
+            url={"https://getacat-backend.onrender.com/get-a-cat-info-datail/get-all-names/"}
+            cache_key={"cached_cat_names"} />
+
           <p className="url" onClick={() => navigator.clipboard.writeText(getInfoURL)}
-            style={{ cursor: 'pointer', marginTop: "2%" }} title="Click to copy.">{getInfoURL}</p> 
+            style={{ cursor: 'pointer', marginTop: "2%" }} title="Click to copy.">{getInfoURL}</p>
+            
+          <hr />
 
-            <hr />
+          <CatSelect onCatChange={setChoicedInfo}
+            url={"https://getacat-backend.onrender.com/get-a-cat-info-datail/get-all-properties/"}
+            cache_key={"cached_cat_properties"} />
 
+          <p className="url" onClick={() => navigator.clipboard.writeText(getInfoURLWithProp)}
+            style={{ cursor: 'pointer', marginTop: "2%" }} title="Click to copy.">{getInfoURLWithProp}</p>
 
         </div>
       </div>
