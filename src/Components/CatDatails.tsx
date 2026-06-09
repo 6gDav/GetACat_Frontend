@@ -20,7 +20,7 @@ function CatDatails() {
 
 
     useEffect(() => {
-        axios.get(`http://localhost:3001/get-a-cat-info/${choiced}`)
+        axios.get(`https://getacat-backend.onrender.com/get-a-cat-info/${choiced}`)
             .then(r => setChoicedCatDatails(r.data))
             .catch(err => console.error(err))
     }, [choiced]);

@@ -4,6 +4,7 @@ import { useState } from "react";
 
 function APIDescription() {
   const [choiced, setChoiced] = useState("");
+  const getInfoURL = `https://getacat-backend.onrender.com/get-a-cat-info/${choiced}`;
 
   return (
     <div>
@@ -16,19 +17,21 @@ function APIDescription() {
         <input type="radio" name="my_tabs_6" className="tab" aria-label="Images" defaultChecked />
         <div className="tab-content bg-base-100 border-base-300 p-6">
           <h3>Images</h3>
-          <p className="url" onClick={() => navigator.clipboard.writeText("http://localhost:3001/get-a-cat-image")}
-            style={{ cursor: 'pointer' }} title="Click to copy.">http://localhost:3001/get-a-cat-image</p> 
-            {/* Fix */}
+          <p className="url" onClick={() => navigator.clipboard.writeText("https://getacat-backend.onrender.com/get-a-cat-image")}
+            style={{ cursor: 'pointer', marginTop: "2%" }} title="Click to copy.">https://getacat-backend.onrender.com/get-a-cat-image</p> 
         </div>
 
         <input type="radio" name="my_tabs_6" className="tab" aria-label="Cat Datatils" />
         <div className="tab-content bg-base-100 border-base-300 p-6">
           <h3>Cat Datatils</h3>
           <CatDatails onCatChange={setChoiced} />
-        </div>
+          <p className="url" onClick={() => navigator.clipboard.writeText(getInfoURL)}
+            style={{ cursor: 'pointer', marginTop: "2%" }} title="Click to copy.">{getInfoURL}</p> 
 
-        <input type="radio" name="my_tabs_6" className="tab" aria-label="Tab 3" />
-        <div className="tab-content bg-base-100 border-base-300 p-6">Tab content 3</div>
+            <hr />
+
+
+        </div>
       </div>
     </div>
   )

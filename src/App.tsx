@@ -23,7 +23,7 @@ function App() {
   useEffect(() => {
     if (res.length > 0) return;
 
-    axios.get("http://localhost:3001/get-a-cat-image")
+    axios.get("https://getacat-backend.onrender.com/get-a-cat-image")
       .then(r => {
         setRes(r.data);
         sessionStorage.setItem(CACHE_KEY, JSON.stringify(r.data));

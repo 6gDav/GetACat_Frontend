@@ -2,9 +2,11 @@
     position: fixed;
     top: 65px;
     right: 35px;
-    bottom: -50px;
-    height: calc(100vh - 100px);
+    width: 40px; 
+    height: calc(100vh - 130px);
     z-index: 1000;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
     filter: drop-shadow(-1px 0px 5px rgba(0, 0, 0, 0.2));
 }
 
@@ -13,10 +15,11 @@
     width: 45px;
     height: 45px;
     border-radius: 50%;
+    cursor: pointer;
     background-image:
         radial-gradient(circle at -15px 50%, transparent 30px, rgba(0, 0, 0, 0.4) 31px, rgba(0, 0, 0, 0.4) 34px, transparent 35px),
         radial-gradient(circle at 60px 50%, transparent 30px, rgba(0, 0, 0, 0.4) 31px, rgba(0, 0, 0, 0.4) 34px, transparent 35px),
         radial-gradient(circle at 50% -15px, transparent 30px, rgba(0, 0, 0, 0.4) 31px, rgba(0, 0, 0, 0.4) 34px, transparent 35px),
         radial-gradient(circle at 50% 60px, transparent 30px, rgba(0, 0, 0, 0.4) 31px, rgba(0, 0, 0, 0.4) 34px, transparent 35px);
-    transition: transform 0.2s ease-out;
+    background-size: 45px 45px;
 }

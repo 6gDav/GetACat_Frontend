@@ -7,6 +7,7 @@ const VerticalScrollIndicator = () => {
   const skeinOnClickEvent = () => {
     window.scrollTo({
       top: 0,
+      behavior: 'smooth'
     });
   };
 
@@ -43,8 +44,8 @@ const VerticalScrollIndicator = () => {
     "0%", "8%", "16%", "24%", "32%", "40%", "48%", "56%", "64%", "72%", "80%", "100%"
   ];
 
-  const top = useTransform(scaleY, progressPoints, yValues);
-  const left = useTransform(scaleY, progressPoints, xValues);
+  const translateX = useTransform(scaleY, progressPoints, yValues);
+  const translateY = useTransform(scaleY, progressPoints, xValues);
 
   const skeinScale = useTransform(scaleY, [0, 1], [1, 0.2]);
   const skeinRotate = useTransform(scrollY, (y) => y / 15);
@@ -55,7 +56,7 @@ const VerticalScrollIndicator = () => {
         <motion.path d={threadPath} fill="transparent" stroke="rgba(248, 0, 153, 0.85)" strokeWidth="3"
           strokeLinecap="round" strokeLinejoin="round" style={{ pathLength: scaleY }} />
       </svg>
-      <motion.div style={{ position: 'absolute', top, left, x: "-45%", y: "-55%", }}>
+      <motion.div style={{ position: 'absolute', top: translateX, left: translateY, x: "-45%", y: "-55%", }}>
         <motion.div id='skein' style={{ scale: skeinScale, rotate: skeinRotate }}  onClick={skeinOnClickEvent}/>
       </motion.div>
     </div >

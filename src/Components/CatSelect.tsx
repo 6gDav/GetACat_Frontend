@@ -16,7 +16,7 @@ function CatSelect({ onCatChange }: CatSelectProps) {
     useEffect(() => {
         if (catNames.length > 0) return;
 
-        axios.get("http://localhost:3001/get-a-cat-info-datail/get-all-names/")
+        axios.get("https://getacat-backend.onrender.com/get-a-cat-info-datail/get-all-names/")
             .then(r => {
                 setCatNames(r.data);
                 sessionStorage.setItem(CACHE_KEY, JSON.stringify(r.data));
