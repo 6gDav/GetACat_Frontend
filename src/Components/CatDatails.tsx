@@ -43,7 +43,7 @@ function CatDatails() {
                     </div>
                 ) : (
                     <div className="card md:card-side bg-base-100 shadow-xl border border-base-200 overflow-hidden transition-all duration-300 hover:shadow-2xl">
-                        <figure className="md:w-2/5 h-64 md:h-auto relative min-h-[300px]">
+                        <figure className="md:w-2/5 h-64 md:h-auto relative min-h-75">
                             <img
                                 src={choicedCatDatails.image}
                                 alt={choicedCatDatails.name || "Cat Image"}

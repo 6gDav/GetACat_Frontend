@@ -9,8 +9,6 @@ interface CatSelectProps {
     regex: boolean //This is unused because I realised this is basicly unnecesarry. Just a buty thing.
 }
 
-// regualr expression capability 
-
 function CatSelect({ onCatChange, url, cache_key, nameOrprop, regex }: CatSelectProps) {
     const selectDefaultValue = `Pick a cat ${nameOrprop}`;
 
