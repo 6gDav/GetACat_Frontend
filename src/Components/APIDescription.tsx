@@ -26,6 +26,7 @@ function APIDescription() {
         <input type="radio" name="my_tabs_6" className="tab" aria-label="Cat Datatils" />
         <div className="tab-content bg-base-100 border-base-300 p-6">
           <h3>Cat Datatils</h3>
+          <p className="select-description">Select the intended name belove.</p>
 
           <CatSelect onCatChange={setChoicedName}
             url={"https://getacat-backend.onrender.com/get-a-cat-info-datail/get-all-names/"}
@@ -38,6 +39,7 @@ function APIDescription() {
 
           <hr />
 
+          <p className="select-description">Select the intended properti belove.</p>
           <CatSelect onCatChange={setChoicedInfo}
             url={"https://getacat-backend.onrender.com/get-a-cat-info-datail/get-all-properties/"}
             cache_key={"cached_cat_properties"}
