@@ -29,16 +29,20 @@ function APIDescription() {
 
           <CatSelect onCatChange={setChoicedName}
             url={"https://getacat-backend.onrender.com/get-a-cat-info-datail/get-all-names/"}
-            cache_key={"cached_cat_names"} />
+            cache_key={"cached_cat_names"}
+            nameOrprop={"Name"}
+            regex={false} />
 
           <p className="url" onClick={() => navigator.clipboard.writeText(getInfoURL)}
             style={{ cursor: 'pointer', marginTop: "2%" }} title="Click to copy.">{getInfoURL}</p>
-            
+
           <hr />
 
           <CatSelect onCatChange={setChoicedInfo}
             url={"https://getacat-backend.onrender.com/get-a-cat-info-datail/get-all-properties/"}
-            cache_key={"cached_cat_properties"} />
+            cache_key={"cached_cat_properties"}
+            nameOrprop={"Propertie"}
+            regex={true} />
 
           <p className="url" onClick={() => navigator.clipboard.writeText(getInfoURLWithProp)}
             style={{ cursor: 'pointer', marginTop: "2%" }} title="Click to copy.">{getInfoURLWithProp}</p>

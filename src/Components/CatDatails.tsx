@@ -30,9 +30,11 @@ function CatDatails() {
     return (
         <div>
             <h1>Cat Datails</h1>
-            <CatSelect onCatChange={setChoiced} 
+            <CatSelect onCatChange={setChoiced}
                 url={"https://getacat-backend.onrender.com/get-a-cat-info-datail/get-all-names/"}
-                cache_key={"cached_cat_names"} />
+                cache_key={"cached_cat_names"}
+                nameOrprop={"Name"}
+                regex={false} />
 
             <div className="mt-12 px-4 sm:px-8 md:px-16 lg:px-24 xl:px-32 W-full max-w-6xl mx-auto">
                 {!choicedCatDatails ? (
