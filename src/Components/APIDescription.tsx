@@ -16,14 +16,14 @@ function APIDescription() {
       </p>
 
       <div className="tabs tabs-box md:w-3/4 mx-auto">
-        <input type="radio" name="my_tabs_6" className="tab" aria-label="Images" defaultChecked />
+        <input type="radio" name="my_tabs_6" className="tab tab-color" aria-label="Images" defaultChecked />
         <div className="tab-content bg-base-100 border-base-300 p-6">
           <h3>Images</h3>
           <p className="url" onClick={() => navigator.clipboard.writeText("https://getacat-backend.onrender.com/get-a-cat-image")}
             style={{ cursor: 'pointer', marginTop: "2%" }} title="Click to copy.">https://getacat-backend.onrender.com/get-a-cat-image</p>
         </div>
 
-        <input type="radio" name="my_tabs_6" className="tab" aria-label="Cat Datatils" />
+        <input type="radio" name="my_tabs_6" className="tab tab-color" aria-label="Cat Datatils" />
         <div className="tab-content bg-base-100 border-base-300 p-6">
           <h3>Cat Datatils</h3>
           <p className="select-description">Select the intended name belove.</p>

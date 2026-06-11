@@ -121,8 +121,6 @@
   position: relative;
   z-index: 1;
   background: var(--bg);
-  /* The root has border-inline, which we want to apply to the content but without messing up fixed header.
-    Actually, main-content is inside root, so it's already bounded. */
 }
 
 /* Cat Image */

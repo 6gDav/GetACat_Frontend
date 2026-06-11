@@ -2,6 +2,10 @@
     margin-top: 2.5%;
 }
 
+.tab-color {
+    color:  rgba(248, 0, 153, 0.85);
+}
+
 .select-description {
     margin-top: 1%;
     margin-bottom: 3%;
