@@ -1,6 +1,6 @@
-import catImage from '../assets/cat.png';
+import catImage from '../../assets/cat.png'
 
-import "../styles/FooterStyle.css";
+import './Footer.css';
 
 function Footer() {
     return (

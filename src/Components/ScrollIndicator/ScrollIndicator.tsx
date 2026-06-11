@@ -1,5 +1,6 @@
-import { motion, useScroll, useSpring, useTransform } from 'framer-motion';
-import '../styles/ProgressBar.css'
+import { motion, useScroll, useSpring, useTransform } from 'framer-motion'
+
+import './ScrollIndicator.css'
 
 const VerticalScrollIndicator = () => {
   const { scrollYProgress, scrollY } = useScroll();

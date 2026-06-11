@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react"
-import axios from "axios"
-import CatSelect from "./CatSelect"
+import { useEffect, useState } from 'react'
+import axios from 'axios'
+import CatSelect from '../CatSelect'
 
-import "../styles/CatDatails.css"
+import './CatDatails.css'
 
 interface CatDatailsName {
     id: string,

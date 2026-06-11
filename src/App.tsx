@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 
-import Header from './Components/Header'
-import CaroselUI from './Components/CaroselUI'
-import APIDescription from './Components/APIDescription'
-import CatDatails from './Components/CatDatails'
-import VerticalScrollIndicator from './Components/ScrollIndicator'
-import Footer from './Components/Footer'
+import Header from './Components/Header/Header'
+import Carosel from './Components/ImageCarosel/Carosel'
+import APIDescription from './Components/APIDescription/APIDescription'
+import CatDatails from './Components/CatDatails/CatDatails'
+import VerticalScrollIndicator from './Components/ScrollIndicator/ScrollIndicator'
+import Footer from './Components/Footer/Footer'
 
 import './styles/App.css'
 
@@ -45,7 +45,7 @@ function App() {
       <Header />
       <main className="main-content">
         <section id='images'>
-          <CaroselUI res={res} />
+          <Carosel res={res} />
         </section>
         <hr />
         <section id='catdatails'>

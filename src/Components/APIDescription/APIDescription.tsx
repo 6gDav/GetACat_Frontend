@@ -1,6 +1,7 @@
-import "../styles/Description.css"
-import { useState } from "react";
-import CatSelect from "../Components/CatSelect";
+import { useState } from 'react'
+import CatSelect from '../CatSelect'
+
+import './APIDescription.css'
 
 function APIDescription() {
   const [choicedName, setChoicedName] = useState("");

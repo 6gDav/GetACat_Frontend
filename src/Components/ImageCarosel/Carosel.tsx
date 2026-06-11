@@ -1,8 +1,8 @@
 import { useState } from "react";
 
-import '../styles/CaroselUI.css'
+import "./Carosel.css"
 
-function CaroselUI({ res }) {
+function Carosel({ res }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   if (!res || res.length === 0) return null;
 
@@ -40,4 +40,4 @@ function CaroselUI({ res }) {
   );
 }
 
-export default CaroselUI;
+export default Carosel;

@@ -1,10 +1,9 @@
 import { useEffect, useState } from 'react'
-import catImage from '../assets/cat.png';
 
-import '../styles/HeaderStyle.css'
-import '../styles/Responsive.css'
+import catImage from '../../assets/cat.png'
 
-//import VerticalScrollIndicator from '../Components/ScrollIndicator'
+import './Header.css'
+import '../../styles/Responsive.css'
 
 function Header() {
     const [isScrolled, setIsScrolled] = useState<boolean>(false)
