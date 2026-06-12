@@ -6,10 +6,10 @@ interface CatSelectProps {
     url: string;
     cache_key: string;
     nameOrprop: "Name" | "Propertie";
-    regex: boolean //This is unused because I realised this is basicly unnecesarry. Just a buty thing.
+    //regex: boolean //This is unused because I realised this is basicly unnecesarry. Just a buty thing.
 }
 
-function CatSelect({ onCatChange, url, cache_key, nameOrprop, regex }: CatSelectProps) {
+function CatSelect({ onCatChange, url, cache_key, nameOrprop }: CatSelectProps) {
     const selectDefaultValue = `Pick a cat ${nameOrprop}`;
 
     const [catNames, setCatNames] = useState<string[]>(() => {

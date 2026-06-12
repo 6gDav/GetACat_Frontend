@@ -2,16 +2,16 @@ import { useState } from "react";
 
 import "./Carosel.css"
 
-function Carosel({ res }) {
+function Carosel({ res }: {res: any}) {
   const [currentIndex, setCurrentIndex] = useState(0);
   if (!res || res.length === 0) return null;
 
-  const handlePrev = (e) => {
+  const handlePrev = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     setCurrentIndex((prev) => (prev === 0 ? res.length - 1 : prev - 1));
   };
 
-  const handleNext = (e) => {
+  const handleNext = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     setCurrentIndex((prev) => (prev === res.length - 1 ? 0 : prev + 1));
   };
@@ -19,7 +19,7 @@ function Carosel({ res }) {
   return (
     <div>
       <div className="carousel w-full">
-        {res.map((item, index) => {
+        {res.map((item: any, index) => {
           const isCurrent = index === currentIndex;
 
           return (
