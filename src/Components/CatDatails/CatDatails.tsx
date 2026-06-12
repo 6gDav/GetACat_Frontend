@@ -25,8 +25,6 @@ function CatDatails() {
             .catch(err => console.error(err))
     }, [choiced]);
 
-    //console.log("From CatDatails", choicedCatDatails)
-
     return (
         <div>
             <h1>Cat Datails</h1>
