@@ -4,7 +4,7 @@ import './Footer.css';
 
 function Footer() {
     return (
-        <footer className="footer sm:footer-horizontal bg-base-200 text-base-content p-10 w-full">
+        <footer data-theme="dark" className="footer sm:footer-horizontal bg-base-200 text-base-content p-10 w-full">
             <aside>
                 <img src={catImage} alt="cat-image" className={"cat-image-footer"} />
                 <p><a href="https://github.com/6gDav" target='_blank'>6gDav</a></p>

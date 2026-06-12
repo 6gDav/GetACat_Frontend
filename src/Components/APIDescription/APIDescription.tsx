@@ -16,7 +16,7 @@ function APIDescription() {
         Heres you can build your own API variation.
       </p>
 
-      <div className="tabs tabs-box md:w-3/4 mx-auto">
+      <div className="tabs tabs-box md:w-3/4 mx-auto" data-theme="dark">
         <input type="radio" name="my_tabs_6" className="tab tab-color" aria-label="Images" defaultChecked />
         <div className="tab-content bg-base-100 border-base-300 p-6">
           <h3>Images</h3>
@@ -33,7 +33,7 @@ function APIDescription() {
             url={"https://getacat-backend.onrender.com/get-a-cat-info-datail/get-all-names/"}
             cache_key={"cached_cat_names"}
             nameOrprop={"Name"} />
-            {/* regex={false} /> */}
+          {/* regex={false} /> */}
 
           <p className="url" onClick={() => navigator.clipboard.writeText(getInfoURL)}
             style={{ cursor: 'pointer', marginTop: "2%" }} title="Click to copy.">{getInfoURL}</p>
@@ -45,7 +45,7 @@ function APIDescription() {
             url={"https://getacat-backend.onrender.com/get-a-cat-info-datail/get-all-properties/"}
             cache_key={"cached_cat_properties"}
             nameOrprop={"Propertie"} />
-            {/* regex={true} /> */}
+          {/* regex={true} /> */}
 
           <p className="url" onClick={() => navigator.clipboard.writeText(getInfoURLWithProp)}
             style={{ cursor: 'pointer', marginTop: "2%" }} title="Click to copy.">{getInfoURLWithProp}</p>

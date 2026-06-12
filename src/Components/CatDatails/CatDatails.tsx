@@ -34,13 +34,13 @@ function CatDatails() {
                 nameOrprop={"Name"} />
                 {/* regex={false} /> */}
 
-            <div className="mt-12 px-4 sm:px-8 md:px-16 lg:px-24 xl:px-32 W-full max-w-6xl mx-auto">
+            <div className="mt-12 px-4 sm:px-8 md:px-16 lg:px-24 xl:px-32 W-full max-w-6xl mx-auto" >
                 {!choicedCatDatails ? (
-                    <div className="text-center p-8 bg-base-200 rounded-2xl shadow-inner">
+                    <div className="text-center p-8 bg-base-200 rounded-2xl shadow-inner" data-theme="dark">
                         <p className="text-xl font-semibold text-base-content/70">Cat not found</p>
                     </div>
                 ) : (
-                    <div className="card md:card-side bg-base-100 shadow-xl border border-base-200 overflow-hidden transition-all duration-300 hover:shadow-2xl">
+                    <div className="card md:card-side bg-base-100 shadow-xl border border-base-200 overflow-hidden transition-all duration-300 hover:shadow-2xl" data-theme="dark">
                         <figure className="md:w-2/5 h-64 md:h-auto relative min-h-75">
                             <img
                                 src={choicedCatDatails.image}

@@ -1,8 +1,8 @@
 :root {
-  color-scheme: dark; 
+  color-scheme: dark;
   --text: #ffffff;
   --text-h: #f3f4f6;
-  --bg: #16171d;          
+  --bg: #16171d;
   --border: #2e303a;
   --code-bg: #1f2028;
   --accent: #b9b9b9;
@@ -18,9 +18,10 @@
 
   font: 18px/145% var(--sans);
   letter-spacing: 0.18px;
-  
-  color: var(--text);
-  background: var(--bg);
+
+  color: var(--text) !important;
+  background-color: var(--bg) !important;
+
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -33,23 +34,80 @@
 
 html {
   scroll-behavior: smooth;
-}
-
-p {
-  margin-left: 10%;
-  margin-right: 10%;
+  background-color: var(--bg);
+  color: var(--text);
+  color-scheme: dark;
 }
 
 body {
   margin: 0;
-  background: var(--bg); 
+  background-color: var(--bg) !important;
+  color: var(--text) !important;
+  color-scheme: dark;
+}
+
+/* Dark forcing — div */
+
+
+/* Dark forcing — native form elemts */
+
+/* select,
+option,
+input,
+input[type="text"],
+input[type="search"],
+input[type="number"],
+input[type="email"],
+input[type="password"],
+textarea,
+button {
+  color-scheme: dark;
+  background-color: var(--code-bg);
+  color: var(--text);
+} */
+
+option {
+  background-color: var(--code-bg);
+  color: var(--text);
+}
+
+option:hover,
+option:focus,
+option:checked {
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+div,
+section,
+article,
+aside,
+nav,
+main,
+header,
+footer {
+  color-scheme: dark;
+}
+
+p,
+span,
+li,
+a,
+label {
+  color: var(--text);
+}
+
+p {
+  margin: 0 10%;
 }
 
 h1,
-h2 {
+h2,
+h3,
+h4 {
   font-family: var(--heading);
   font-weight: 500;
-  color: var(--text-h);
+  color: var(--text-h) !important;
 }
 
 h1 {
@@ -74,8 +132,18 @@ h2 {
   }
 }
 
-p {
+h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+
+h3,
+h4 {
   margin: 0;
+  padding: 0;
 }
 
 code,
@@ -95,23 +163,9 @@ code {
 
 hr {
   width: 60%;
-  margin: 3rem auto; 
-  border: none;     
-  height: 2px;       
-  background-color: #333; 
-  border-radius: 2px;    
-}
-
-h3, h4 {
-  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-}
-
-h3 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  letter-spacing: -0.5px;
-  margin-bottom: 12px;
-  text-transform: uppercase;
+  margin: 3rem auto;
+  border: none;
+  height: 2px;
+  background-color: #333;
+  border-radius: 2px;
 }
