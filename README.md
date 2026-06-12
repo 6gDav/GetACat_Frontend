@@ -208,6 +208,9 @@ bun run build
 <hr>
 
 > May be needed to download all necessary dependencies.
+```bash
+bun install
+```
 
 # 🪪 License
 
