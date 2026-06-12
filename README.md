@@ -16,7 +16,7 @@ You can find breed specific properties like:
 * characteristic
 * and an image
 
-[⚡️ Core Features Click here 👉 to navigate to user features](#-core-features) <br>
+[⚡️ Core Features Click here 👉 to navigate to user features](#core-features)
 Click here 👉 [to navigate to developer features](#fordevelopers)
 
 # 💻 About this project
