@@ -25,3 +25,14 @@ This is the frontend code of [GetACat](https://getacat-frontend.netlify.app/). I
 
 
 ## <a name="forusers"></a>⚡️ Core Features
+
+This application contains several functions, like: 
+* 🌇 **Images** – These images comes from [*Imgur*](https://imgur.com/) but are fetched by the [*backend*](https://github.com/6gDav/GetACat_Backend) 
+* 💿 **CatDatails** – You can request data about a specific cat breed.
+* 🩱 **CostumeAPI** – Availability to make your own API version.
+
+> This project is mainly UI heavy. So I rather deal with UI than functionality.
+
+
+
+
