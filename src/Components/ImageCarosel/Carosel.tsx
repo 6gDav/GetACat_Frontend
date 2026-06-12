@@ -19,7 +19,7 @@ function Carosel({ res }: {res: any}) {
   return (
     <div>
       <div className="carousel w-full">
-        {res.map((item: any, index) => {
+        {res.map((item: any, index: number) => {
           const isCurrent = index === currentIndex;
 
           return (
