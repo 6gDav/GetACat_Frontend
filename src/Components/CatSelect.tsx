@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
+import './CatSelect.css'
+
 interface CatSelectProps {
     onCatChange: (catName: string) => void;
     url: string;
@@ -59,7 +61,7 @@ function CatSelect({ onCatChange, url, cache_key, nameOrprop }: CatSelectProps) 
     }, [url, cache_key, catNames.length]);
 
     return (
-        <select defaultValue={selectDefaultValue} className="select select-secondary"
+        <select defaultValue={selectDefaultValue} className="custom-select"
             onChange={(e) => onCatChange(e.target.value)}>
             <option disabled value={selectDefaultValue}>{selectDefaultValue}</option>
             {Array.isArray(catNames) && catNames.map((cat, index) => (

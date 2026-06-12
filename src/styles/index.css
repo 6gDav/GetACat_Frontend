@@ -46,12 +46,10 @@ body {
   color-scheme: dark;
 }
 
-/* Dark forcing — div */
-
 
 /* Dark forcing — native form elemts */
 
-/* select,
+select,
 option,
 input,
 input[type="text"],
@@ -64,7 +62,7 @@ button {
   color-scheme: dark;
   background-color: var(--code-bg);
   color: var(--text);
-} */
+}
 
 option {
   background-color: var(--code-bg);

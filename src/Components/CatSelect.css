@@ -1,0 +1,24 @@
+.custom-select {
+  width: 50%;
+  padding: 16px 20px;
+  font-size: 16px;
+  color: var(--text);
+  border: 2px solid #323238;
+  border-radius: 12px;
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.custom-select:hover {
+  border-color: var(--accent); 
+  background-color: #29292e;
+}
+
+.custom-select:focus {
+  border-color: var(--accent-bg); 
+  background-color: #202024;
+}
+
