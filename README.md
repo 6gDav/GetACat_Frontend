@@ -16,12 +16,12 @@ You can find breed specific properties like:
 * characteristic
 * and an image
 
-[⚡️ Core Features Click here 👉 to navigate to user features](#core-features)
+Click here 👉 [to navigate to user features](#forusers) <br>
 Click here 👉 [to navigate to developer features](#fordevelopers)
 
 # 💻 About this project
 
 This is the frontend code of [GetACat](https://getacat-frontend.netlify.app/). I built this web page as a portfolio project because I wanted to test my frontend skills, mainly focusing on [React](https://react.dev/). This page provides information about cats, such as their lifespan and images. This information comes from the backend, which you can find here 👉 [GetACat_Backend](https://github.com/6gDav/GetACat_Backend).
 
-## ⚡️ Core Features
 
+## <a name="forusers"></a>⚡️ Core Features
