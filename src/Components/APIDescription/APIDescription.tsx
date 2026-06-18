@@ -7,7 +7,7 @@ function APIDescription() {
   const [choicedName, setChoicedName] = useState("");
   const [choicedInfo, setChoicedInfo] = useState("");
   const getInfoURL = `https://getacat-backend.onrender.com/get-a-cat-info/${choicedName}`;
-  const getInfoURLWithProp = `https://getacat-backend.onrender.com/get-a-cat-info/${choicedName}/${choicedInfo}`
+  const getInfoURLWithProp = `https://getacat-backend.onrender.com/get-a-cat-info-datail/${choicedName}/${choicedInfo}`
 
   return (
     <div>
